@@ -4,6 +4,9 @@
 	<groupId>AdresDefteri</groupId>
 	<artifactId>AdresDefteri</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	
+	
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<resources>

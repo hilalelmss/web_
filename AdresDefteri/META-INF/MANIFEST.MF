@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AdresDefteri
+Bundle-SymbolicName: AdresDefteri
+Bundle-Version: 1.0.0.qualifier
+Export-Package: com.hilalelmas.controller,
+ com.hilalelmas.dao,
+ com.hilalelmas.entity
