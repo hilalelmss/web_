@@ -1,5 +1,7 @@
 package com.hilalelmas.dao;
 
+import java.util.List;
+
 import com.hilalelmas.entity.Kisi;
 
 public class DAO extends ADao {
@@ -27,4 +29,7 @@ public class DAO extends ADao {
 	// return em.find(Kisi.class, 1);
 	// }
 
+	public List<Kisi> getKisiList(){
+		return this.em.createQuery("SELECT c FROM Kisi c").getResultList();
+	}
 }

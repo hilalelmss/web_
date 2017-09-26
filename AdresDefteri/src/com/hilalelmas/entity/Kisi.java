@@ -21,9 +21,9 @@ public class Kisi {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="kisi_id")
 	int idkisi;
-	@Enumerated(EnumType.STRING)
+	//@Enumerated(EnumType.STRING)
 	String name;
-	@Enumerated(EnumType.STRING)
+//	@Enumerated(EnumType.STRING)
 	String surname;
 	String eposta;
 

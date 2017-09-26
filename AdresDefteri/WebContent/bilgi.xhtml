@@ -4,10 +4,11 @@
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<head>
-<style>
+<h:head>
+	<style>
 body {
-	background-color: Lavender;
+	background-image: url("defter.jpg");
+	background-size: 100% 500%;
 }
 
 h1 {
@@ -16,16 +17,31 @@ h1 {
 	font-size: 200%;
 	border: 2px solid Indigo;
 	text-align: center;
+	background-color: MistyRose;
 }
 </style>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta charset="UTF-8" />
-<title>Insert title here</title>
-</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="UTF-8" />
+	<title>Insert title here</title>
+</h:head>
 
-<body>
-		<h1>Adres Defteri Sayfamıza Hoş Geldiniz</h1>
-</body>
+<h:body>
+	<h:form>
+		<h1>Adres Defterimiz</h1>
+		<p:growl id="messages" showDetail="false" />
+		<p:panelGrid columns="2">
+			<p:menu toggleable="true">
+				<p:submenu label="Yapmak İstediğiniz İşlemi Seçin"
+					icon="ui-icon-gear">
+					<p:menuitem value="Kisi Ekle" action="#{kisiadd.xhtml}"
+						icon="ui-icon-disk" />
+					<p:menuitem value="Kisi Görüntüle" url="kisiview.xhtml"
+						icon="ui-icon-arrowrefresh-1-w" />
+				</p:submenu>
+			</p:menu>
+		</p:panelGrid>
+	</h:form>
+</h:body>
 
 </html>
