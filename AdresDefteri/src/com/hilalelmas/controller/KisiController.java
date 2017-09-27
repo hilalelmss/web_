@@ -10,7 +10,7 @@ import javax.faces.bean.SessionScoped;
 import com.hilalelmas.dao.DAO;
 import com.hilalelmas.entity.Kisi;
 
-@ManagedBean(name = "kisiAdd")
+@ManagedBean(name = "kisiBean")
 @SessionScoped
 public class KisiController {
 	Kisi kisiler;
@@ -21,12 +21,13 @@ public class KisiController {
 		kisiler = new Kisi();
 		DAO dao = new DAO();
 		listkisi = dao.getKisiList();
-		//listkisi.add(kisiler);
+		// listkisi.add(kisiler);
 	}
 
 	public void setKisiler(Kisi kisiler) {
 		this.kisiler = kisiler;
 	}
+
 	public Kisi getKisiler() {
 		return kisiler;
 	}
@@ -39,4 +40,10 @@ public class KisiController {
 		return listkisi;
 	}
 
+	public void kaydet() {
+		DataBase base = new DataBase();
+		base.kisiEkle(kisiler);
+		DAO dao = new DAO();
+		listkisi = dao.getKisiList();
+	}
 }

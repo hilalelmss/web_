@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+</h:head>
+<h:body>
+	<h:form>
+
+		<p:dataTable var="Kisi" value="#{kisiBean.listkisi}">
+			<p:column headerText="Id">
+				<h:outputText value="#{Kisi.idkisi}" />
+			</p:column>
+
+
+			<p:column filterBy="#{Kisi.name}" headerText="Adı"
+				 filterMatchMode="contains">
+				<h:outputText value="#{Kisi.name}" />
+			</p:column>
+
+			<p:column filterBy="#{Kisi.surname}" headerText="Soyadı"
+				 filterMatchMode="contains">
+				<h:outputText value="#{Kisi.surname}" />
+			</p:column>
+
+			<p:column headerText="e-posta">
+				<h:outputText value="#{Kisi.eposta}" />
+			</p:column>
+
+			<p:column headerText="iletişim">
+				<ui:repeat var="Kisi" value="#{Kisi.telefonList}">
+
+					<h:outputText value="#{Kisi.telno}" />
+					<br />
+				</ui:repeat>
+			</p:column>
+
+			<p:column headerText="adres">
+				<h:outputText
+					value="#{Kisi.adres.idAdres}-#{Kisi.adres.mahalle} #{Kisi.adres.sokak} #{Kisi.adres.ilce}/#{Kisi.adres.il}" />
+			</p:column>
+		</p:dataTable>
+
+	</h:form>
+</h:body>
+</html>

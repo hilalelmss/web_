@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta charset="UTF-8" />
+</h:head>
+<h:body>
+	<h:form>
+		<p:panel header="Kisi Ekle">
+			<p:messages autoUpdate="true" />
+
+
+			<h:panelGrid id="grid" columns="4" cellpadding="5">
+
+				<h:outputLabel for="name" value="Adı:" style="font-weight:bold" />
+				<p:inputText id="name" value="#{kisiBean.kisiler.name}"
+					required="true" validatorMessage="A-Z / a-z deger girin">
+					<f:validateRegex pattern="[A-Za-z]*" />
+				</p:inputText>
+				<p:message for="name" errorStyle="color:red; display:block" />
+				<br />
+
+
+				<h:outputLabel for="surname" value="Soyadı:"
+					style="font-weight:bold" />
+				<p:inputText id="surname" value="#{kisiBean.kisiler.surname}"
+					required="true" validatorMessage="A-Z / a-z deger girin">
+					<f:validateRegex pattern="[A-Za-z]*" />
+				</p:inputText>
+				<p:message for="surname" errorStyle="color:red; display:block" />
+				<br />
+
+
+				<h:outputLabel for="eposta" value="e-posta:"
+					style="font-weight:bold" />
+				<p:inputText value="#{kisiBean.kisiler.eposta}" required="true"
+					required="true" validatorMessage="e-posta formatında giriş yapın">
+					<f:validateRegex
+						pattern="^[_A-Za-z0-9-+\]+(.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(.[A-Za-z0-9]+)*(.[A-Za-z]{2,})$" />
+				</p:inputText>
+				<br />
+
+				<h:outputLabel for="adres" value="Adres:" style="font-weight:bold" />
+				<p:inputText value="#{kisiBean.kisiler.adres}" required="true">
+				</p:inputText>
+				<br />
+
+				<h:outputLabel for="telno" value="Telefon:" style="font-weight:bold" />
+				<p:inputText value="#{kisiBean.kisiler.telefonList}" required="true" />
+				<br />
+			</h:panelGrid>
+			<p:commandButton value="Kaydet" action="#{kisiBean.kaydet}"
+				icon="ui-icon-check" />
+
+
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
