@@ -19,9 +19,9 @@ public class DAO extends ADao {
 		em.getTransaction().commit();
 	}
 
-	public void update(int id) {
+	public void update(Object object) {
 		em.getTransaction().begin();
-		em.merge(id);
+		em.merge(object);
 		em.getTransaction().commit();
 	}
 

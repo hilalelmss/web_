@@ -46,4 +46,6 @@ public class KisiController {
 		DAO dao = new DAO();
 		listkisi = dao.getKisiList();
 	}
+	
+	
 }
