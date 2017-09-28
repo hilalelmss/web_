@@ -14,7 +14,7 @@ public class Adres {
 	String mahalle;
 	String ilce;
 	String il;
-
+	
 	public int getIdAdres() {
 		return idAdres;
 	}

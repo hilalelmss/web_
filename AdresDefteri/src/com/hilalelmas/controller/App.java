@@ -13,16 +13,16 @@ public class App {
 		DAO dao = new DAO();
 
 		Adres adres = new Adres();
-		adres.setIlce("Yuvacýk");
-		adres.setIl("Kocaeli");
-		adres.setMahalle("çiçek mah.");
-		adres.setSokak("korkmaz sokak");
+		adres.setIlce("Çankaya");
+		adres.setIl("Ankara");
+		adres.setMahalle("cýkmaz mah.");
+		adres.setSokak("necati sokak");
 		dao.insert(adres);
 
 		Telefon telefon = new Telefon();
-		telefon.setTelno("0555 623 74 15");
+		telefon.setTelno("0544 963 10 45");
 		Telefon telefon2 = new Telefon();
-		telefon2.setTelno("0262 312 12 00");
+		telefon2.setTelno("0312 741 52 63");
 		dao.insert(telefon);
 		dao.insert(telefon2);
 		
@@ -31,13 +31,14 @@ public class App {
 		telefons.add(telefon2);
 
 		Kisi kisi = new Kisi();
-		kisi.setEposta("mustafa26@gmail.com");
-		kisi.setName("Mustafa");
-		kisi.setSurname("Korkmaz");
+		kisi.setEposta("necati@gmail.com");
+		kisi.setName("Necati");
+		kisi.setSurname("Yýlmaz");
 		kisi.setTelefonList(telefons);
 		kisi.setAdres(adres);
 		dao.insert(kisi);
 		//dao.update(kisi);
+		
 		
 
 	}

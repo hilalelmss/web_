@@ -10,7 +10,6 @@ public class DAO extends ADao {
 		em.getTransaction().begin();
 		em.persist(object);
 		em.getTransaction().commit();
-
 	}
 
 	public void delete(Object object) {

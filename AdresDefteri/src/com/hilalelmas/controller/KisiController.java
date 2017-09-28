@@ -6,7 +6,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-
 import com.hilalelmas.dao.DAO;
 import com.hilalelmas.entity.Kisi;
 
@@ -41,11 +40,9 @@ public class KisiController {
 	}
 
 	public void kaydet() {
-		DataBase base = new DataBase();
-		base.kisiEkle(kisiler);
 		DAO dao = new DAO();
+		dao.insert(kisiler);
 		listkisi = dao.getKisiList();
 	}
-	
-	
+
 }
