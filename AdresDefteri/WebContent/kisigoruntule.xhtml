@@ -8,6 +8,12 @@
 	<meta charset="UTF-8" />
 </h:head>
 <h:body>
+
+	<p:panelGrid columns="2">
+	
+	<ui:include src="menu.xhtml"/>
+	
+	
 	<h:form>
 
 		<p:dataTable var="Kisi" value="#{kisiBean.listkisi}">
@@ -45,5 +51,10 @@
 		</p:dataTable>
 
 	</h:form>
+	
+	</p:panelGrid>
+
+
+	
 </h:body>
 </html>

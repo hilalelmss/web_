@@ -31,15 +31,12 @@ h1 {
 		<h1>Adres Defterimiz</h1>
 		<p:growl id="messages" showDetail="false" />
 		<p:panelGrid columns="2">
-			<p:menu toggleable="true">
-				<p:submenu label="Yapmak İstediğiniz İşlemi Seçin"
-					icon="ui-icon-gear">
-					<p:menuitem value="Kisi Ekle" url="kisiekle.xhtml" 
-						icon="ui-icon-disk" />
-					<p:menuitem value="Kisi Görüntüle" url="kisigoruntule.xhtml"
-						icon="ui-icon-arrowrefresh-1-w" />
-				</p:submenu>
-			</p:menu>
+		
+		<ui:include src="menu.xhtml"/>
+		
+		<h:outputLabel value="Merhaba Hoş Glediniz"></h:outputLabel>
+		
+
 		</p:panelGrid>
 	</h:form>
 	

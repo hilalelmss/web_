@@ -3,6 +3,7 @@ package com.hilalelmas.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -57,10 +58,10 @@ public class Kisi {
 		this.eposta = eposta;
 	}
 
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.ALL})
 	Adres adres;
 
-	public void setAdres(Adres adres) {
+	public void setAdres(Adres adres) { 
 		this.adres = adres;
 	}
 
@@ -68,7 +69,7 @@ public class Kisi {
 		return adres;
 	}
 
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.ALL})
 	@JoinTable(name = "kisi_tel", joinColumns = @JoinColumn(name = "kisi_id"), inverseJoinColumns = @JoinColumn(name = "tel_id"))
 	List<Telefon> telefonList = new ArrayList<>();
 
