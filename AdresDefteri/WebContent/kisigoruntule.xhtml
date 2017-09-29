@@ -8,19 +8,14 @@
 	<meta charset="UTF-8" />
 </h:head>
 <h:body>
-
 	<p:panelGrid columns="2">
-	
 	<ui:include src="menu.xhtml"/>
-	
-	
 	<h:form>
 
 		<p:dataTable var="Kisi" value="#{kisiBean.listkisi}">
 			<p:column headerText="Id">
 				<h:outputText value="#{Kisi.idkisi}" />
 			</p:column>
-
 
 			<p:column filterBy="#{Kisi.name}" headerText="Adı"
 				 filterMatchMode="contains">
@@ -49,12 +44,7 @@
 					value="#{Kisi.adres.mahalle} #{Kisi.adres.sokak} #{Kisi.adres.ilce}/#{Kisi.adres.il}" />
 			</p:column>
 		</p:dataTable>
-
 	</h:form>
-	
 	</p:panelGrid>
-
-
-	
 </h:body>
 </html>

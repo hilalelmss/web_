@@ -65,7 +65,6 @@ public class KisiController {
 	public List<Kisi> getListkisi() {
 		return listkisi;
 	}
-	
 
 	public void setSayac(List<Item> sayac) {
 		this.sayac = sayac;
@@ -75,21 +74,17 @@ public class KisiController {
 		return sayac;
 	}
 	
-	
-
 	public void kaydet() {
 		List<Telefon> telefonList = new ArrayList<>();
 		for (String string : telefonlar) {
 			Telefon telefon = new Telefon();
 			telefon.setTelno(string);
 			telefonList.add(telefon);
-
 		}
 		kisiler.setTelefonList(telefonList);
 		DAO dao = new DAO();
 		dao.insert(kisiler);
 		listkisi = dao.getKisiList();
-
 	}
 
 }

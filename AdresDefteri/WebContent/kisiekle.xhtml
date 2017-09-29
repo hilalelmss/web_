@@ -42,8 +42,19 @@
 				</p:panel>	
 
 
-				<p:panel>
 					
+					<p:panel id="myData">
+
+				<h:outputLabel for="telefon" value="Telefon:" style="font-weight:bold"/>
+					<h:dataTable value="#{kisiBean.sayac}" var="item">
+			   			<h:column>  
+					    <p:inputText value="#{kisiBean.telefonlar[item.sayac]}"/>
+					    </h:column>
+					</h:dataTable>
+					
+			
+					<p:commandButton value="" icon="ui-icon-plus" process="@this"  action="#{kisiBean.addTelefon}" update="myData" />
+				
 					
 					
 					
@@ -98,20 +109,7 @@
 				
 				</p:panel>	
 		
-				<p:panel id="myData">
-
 				
-					<h:dataTable value="#{kisiBean.sayac}" var="item">
-			   			<h:column>  
-					    <p:inputText value="#{kisiBean.telefonlar[item.sayac]}"/>
-					    </h:column>
-					</h:dataTable>
-					
-			
-					<p:commandButton value="Add one more city" process="@this"  action="#{kisiBean.addTelefon}" update="myData" />
-				
-				</p:panel>				
-
 				
 
 			</h:panelGrid>.
