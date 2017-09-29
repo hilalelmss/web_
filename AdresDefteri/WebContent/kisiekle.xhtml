@@ -8,123 +8,95 @@
 	<meta charset="UTF-8" />
 </h:head>
 <h:body>
-
 	<p:panelGrid columns="2">
-		<ui:include src="menu.xhtml"/>
-		
-	<h:form>
-		<p:panel header="Kisi Ekle">
-			<p:messages autoUpdate="true" />
+		<ui:include src="menu.xhtml" />
+		<h:form>
+			<p:panel header="Kisi Ekle">
+				<p:messages autoUpdate="true" />
+				<h:panelGrid id="grid" columns="1" cellpadding="5">
+					<p:panel>
+						<h:outputLabel for="name" value="Adı:" style="font-weight:bold" />
+						<p:inputText id="name" value="#{kisiBean.kisiler.name}"
+							required="true" validatorMessage="A-Z / a-z deger girin">
+							<f:validateLength minimum="2" maximum="10" />
+							<p:clientValidator disabled="" />
+							<f:validateRegex pattern="[A-Za-z]*" />
+						</p:inputText>
+						<p:message for="name" display="icon" />
+					</p:panel>
 
 
-			<h:panelGrid id="grid" columns="1" cellpadding="5">
-				<p:panel>
-					<h:outputLabel for="name" value="Adı:" style="font-weight:bold" />
-					<p:inputText id="name" value="#{kisiBean.kisiler.name}"
-						required="true" validatorMessage="A-Z / a-z deger girin">
-						<f:validateLength minimum="2" maximum="10" />
-						<p:clientValidator disabled="" />
-						<f:validateRegex pattern="[A-Za-z]*" />
-					</p:inputText>
-					<p:message for="name" display="icon" />
-				</p:panel>	
+					<p:panel>
+						<h:outputLabel for="surname" value="Soyadı:"
+							style="font-weight:bold" />
+						<p:inputText id="surname" value="#{kisiBean.kisiler.surname}"
+							required="true" validatorMessage="A-Z / a-z deger girin">
+							<f:validateRegex pattern="[A-Za-z]*" />
+						</p:inputText>
+						<p:message for="surname" display="icon" />
+					</p:panel>
 
 
-
-				<p:panel>
-					<h:outputLabel for="surname" value="Soyadı:"
-						style="font-weight:bold" />
-					<p:inputText id="surname" value="#{kisiBean.kisiler.surname}"
-						required="true" validatorMessage="A-Z / a-z deger girin">
-						<f:validateRegex pattern="[A-Za-z]*" />
-					</p:inputText>
-					<p:message for="surname" display="icon" />
-				</p:panel>	
-
-
-					
 					<p:panel id="myData">
-
-				<h:outputLabel for="telefon" value="Telefon:" style="font-weight:bold"/>
-					<h:dataTable value="#{kisiBean.sayac}" var="item">
-			   			<h:column>  
-					    <p:inputText value="#{kisiBean.telefonlar[item.sayac]}"/>
-					    </h:column>
-					</h:dataTable>
-					
-			
-					<p:commandButton value="" icon="ui-icon-plus" process="@this"  action="#{kisiBean.addTelefon}" update="myData" />
-				
-					
-					
-					
-					
-					
-					
-				</p:panel>	
+						<h:outputLabel for="telefon" value="Telefon:"
+							style="font-weight:bold" />
+						<h:dataTable value="#{kisiBean.sayac}" var="item">
+							<h:column>
+								<p:inputText value="#{kisiBean.telefonlar[item.sayac]}" />
+							</h:column>
+						</h:dataTable>
+						<p:commandButton value="" icon="ui-icon-plus" process="@this"
+							action="#{kisiBean.addTelefon}" update="myData" />
+					</p:panel>
 
 
-				<p:panel>
-				<h:outputLabel for="eposta" value="e-posta:"
-					style="font-weight:bold" />
-				<p:inputText id="eposta" placeholder="name@email.com"
-					value="#{kisiBean.kisiler.eposta}" />
-				<p:message for="eposta" />
-				</p:panel>	
+					<p:panel>
+						<h:outputLabel for="eposta" value="e-posta:"
+							style="font-weight:bold" />
+						<p:inputText id="eposta" placeholder="name@email.com"
+							value="#{kisiBean.kisiler.eposta}" />
+						<p:message for="eposta" />
+					</p:panel>
 
 
-				<p:panel>
-				
-				
-					<h:outputLabel for="adresil" value="İl:" style="font-weight:bold" />
-					<p:inputText id="adresil" value="#{kisiBean.kisiler.adres.il}" />
-					<p:message for="adresil" />
-				</p:panel>	
+					<p:panel>
+						<h:outputLabel for="adresil" value="İl:" style="font-weight:bold" />
+						<p:inputText id="adresil" value="#{kisiBean.kisiler.adres.il}" />
+						<p:message for="adresil" />
+					</p:panel>
 
 
-				<p:panel>
-				
-								<h:outputLabel for="adresilce" value="İlçe:"
-					style="font-weight:bold" />
-				<p:inputText id="adresilce" value="#{kisiBean.kisiler.adres.ilce}" />
-				<p:message for="adresilce" />
-				</p:panel>	
+					<p:panel>
+						<h:outputLabel for="adresilce" value="İlçe:"
+							style="font-weight:bold" />
+						<p:inputText id="adresilce" value="#{kisiBean.kisiler.adres.ilce}" />
+						<p:message for="adresilce" />
+					</p:panel>
 
 
+					<p:panel>
+						<h:outputLabel for="adresmah" value="Mah.:"
+							style="font-weight:bold" />
+						<p:inputText id="adresmah"
+							value="#{kisiBean.kisiler.adres.mahalle}" />
+						<p:message for="adresmah" />
+					</p:panel>
 
-				<p:panel>
-				
-							<h:outputLabel for="adresmah" value="Mah.:" style="font-weight:bold" />
-				<p:inputText id="adresmah" value="#{kisiBean.kisiler.adres.mahalle}" />
-				<p:message for="adresmah" />
-				
-				</p:panel>	
-	
-				<p:panel>
-				
+
+					<p:panel>
 						<h:outputLabel for="adressokak" value="Sokak:"
-					style="font-weight:bold" />
-				<p:inputText id="adressokak" value="#{kisiBean.kisiler.adres.sokak}" />
-				<p:message for="adressokak" />
-				
-				</p:panel>	
-		
-				
-				
-
-			</h:panelGrid>.
+							style="font-weight:bold" />
+						<p:inputText id="adressokak"
+							value="#{kisiBean.kisiler.adres.sokak}" />
+						<p:message for="adressokak" />
+					</p:panel>
 
 
-			<p:commandButton value="Kaydet" actionListener="#{kisiBean.kaydet}" 
-				icon="ui-icon-check"
-				validateClient="true" update ="@form" />
-
-
-		</p:panel>
-	</h:form>
-	
+				</h:panelGrid>
+				<p:commandButton value="Kaydet" actionListener="#{kisiBean.kaydet}"
+					icon="ui-icon-check" validateClient="true" update="@form" />
+			</p:panel>
+		</h:form>
 	</p:panelGrid>
-
-	
 </h:body>
 </html>
